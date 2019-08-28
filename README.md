@@ -12,7 +12,7 @@ A major revision is made and the paper is under review now.
 
 Another major revision needs to be done based on the last revision.
 
-![Alt Text](https://github.com/LijunSun90/pursuitCCPSO_R/blob/master/data/D201901231837_pursuit/n_robots_8_prey_linear%5C_smart_seed_1.gif)
+![Alt Text](https://github.com/LijunSun90/pursuitCCPSOR/blob/master/data/D201901231837_pursuit/n_robots_8_prey_linear%5C_smart_seed_1.gif)
 
 ## How to run
 Prerequisites: the codes are tested in MATLAB R2018a.
