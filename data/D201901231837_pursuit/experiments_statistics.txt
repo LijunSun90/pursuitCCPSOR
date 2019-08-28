@@ -1,0 +1,2 @@
+n_robots prey          seeds captures moves_min moves_max avg_moves std_moves converges moves_converged_min moves_converged_max avg_moves_converged std_moves_converged rumtimes_min(s) rumtimes_max(s) avg_rumtime(s) std_runtime
+8        linear\_smart 1     1        35        35        35.000    0.000     1         40                  40                  40.000              0.000               9.5733          9.5733          9.5733         0.0000     
