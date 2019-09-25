@@ -12,6 +12,10 @@ A major revision is made and the paper is under review now.
 
 Another major revision needs to be done based on the last revision.
 
+### Status update on Sep 25, 2019
+
+The second major revision is made and the paper is under review now.
+
 ![Alt Text](https://github.com/LijunSun90/pursuitCCPSOR/blob/master/data/D201909251947_pursuit/n_robots_8_prey_linear%5C_smart_seed_1.gif)
 
 ## How to run
