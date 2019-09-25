@@ -27,7 +27,7 @@ animation_on = true;
 % 100
 n_seeds = 1;
 % [4,8,12,16,24]
-N_robots = [4]; 
+N_robots = [8]; 
 % ["still","random","linear","linear\_smart"]
 prey_algorithms = ["linear\_smart"];
 
