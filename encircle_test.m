@@ -17,6 +17,9 @@ switch prey
 end
 
 %% loop
+% % uncomment and only used for the occupying based capture definition.
+% p_target_last = p_target;
+% pr_robots_last = p_robots(:, :, 1);
 for iter_cc = 1:MAX_ITERS_CC    
     %% dynamic  
     % jump over the first iteration for the dynamic prey
@@ -35,10 +38,16 @@ for iter_cc = 1:MAX_ITERS_CC
                 % do nothing
         end
         % END switch prey
+        
+%         %% capture status examination -- hunter occupies the cell of the prey
+%         % uncomment and only used for the occupying based capture definition.
+%         captured = ...
+%             capture_occupy(p_target_last, pr_robots_last, p_target);        
     end
     % END if ~mod(iter_cc, ITERS_UPDATE) 
     
     %% preserve variable
+    % comment this when using the occupying based capture defintion.
     pr_robots_last = p_robots(:,:,1);
     
     %% loop all the subpopulations, including the (real & virtual) robots.
@@ -47,6 +56,11 @@ for iter_cc = 1:MAX_ITERS_CC
         = optimizer_cc_pso_encircle(p_robots,fitness_p,pi_robots,...
         fitness_pi,pg_robots,fitness_pg,v_robots,w,c1,c2,map_w,map_h,...
         radius,p_target,iters_still,captured);
+    
+%     %% presrve variables.
+%     % uncomment and only used for the occupying based capture definition.
+%     p_target_last = p_target;
+%     pr_robots_last = p_robots(:, :, 1);    
 
     %% animation
     if animation_on

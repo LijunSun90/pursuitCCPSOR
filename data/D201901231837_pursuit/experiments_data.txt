@@ -1,2 +1,0 @@
-n_robots prey          seed captured moves converged moves_converged runtime(s)
-8        linear\_smart 1    1        35    1         40              9.5733    
