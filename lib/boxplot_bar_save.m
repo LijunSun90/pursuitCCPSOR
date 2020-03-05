@@ -91,6 +91,7 @@ fileID_statistics = fopen(filename_statistics,'r');
 % get the group information [n_robots, prey]
 groups = textscan(fileID_statistics,formatSpec_groups,num_groups,...
                   'Delimiter',delimeter_groups,'MultipleDelimsAsOne',1);
+disp(groups);
               
 % get the statistics data
 fseek(fileID_statistics,position_statistics,'bof');
@@ -129,11 +130,24 @@ fclose(fileID_statistics);
 %% boxplot
 boxplot_name = char(docs_dir + "boxplot.png");
 f_boxplot = figure('Name','boxplot','Visible','on'); 
-boxplot(moves,groups,'Notch','on');
+% boxplot(moves,groups,'Notch','on');
+boxplot(moves,'Notch','on');
+
 xlabel("Number of predators together with a prey type");
 ylabel("Moves to capture the prey");
 
 % save boxplot
+num_groups = size(groups{1});
+num_groups = num_groups(1);
+xticklabel = cell(num_groups, 1);
+for idx = 1:1:num_groups
+    xticklabel{idx} = ['$$\begin{array}{c}',groups{1}{idx},'\\',...
+        groups{2}{idx},'\end{array}$$'];
+end
+
+set(f_boxplot.CurrentAxes,'XTickLabel',xticklabel,...
+    'XTickLabelRotation',90,'TickLabelInterpreter','latex',...
+    'Fontsize',26,'LineWidth',1);
 set(f_boxplot,'WindowState','max','Color','white');
 frame_boxplot = getframe(f_boxplot);
 imwrite(frame_boxplot.cdata, boxplot_name);
@@ -188,11 +202,12 @@ bar_group_prey_name = char(docs_dir + "bar_group_prey.png");
 f_bar_group_prey = figure('Name','bar_group_prey','Visible','on');
 c_group_prey = categorical(prey_algorithms,prey_algorithms,'Ordinal',true);
 bar(c_group_prey,avg_moves_group_prey);
-legend(string(N_predators));
+legend(string(N_predators) + " predators", 'Location', 'best');
 xlabel('Type of the prey');
 ylabel('Average number of moves to capture the prey');
 
 % save
+set(gca,'FontSize',14);
 set(f_bar_group_prey,'Color','white');
 frame_bar_group_prey = getframe(f_bar_group_prey);
 imwrite(frame_bar_group_prey.cdata, bar_group_prey_name);

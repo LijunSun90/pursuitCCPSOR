@@ -94,7 +94,8 @@ for idx = 1:3
     %% add the text comments
     legend([scatter_robots,scatter_target,h_quivers,h_neighbor_1],...
         {'predator','prey','moving directions causing capture',...
-        'common neighbors'},'Location','northeast');  
+        'common neighbors'},'Location','northeast');
+    set(f.CurrentAxes,'FontSize',14);
 
     %% save the axes
     % get the frame
