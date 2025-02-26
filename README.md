@@ -1,6 +1,9 @@
 
 ## Cooperative Coevolution PSO for Robots (CCPSO-R)
 
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=LijunSun90.pursuitCCPSOR)
+
+
 This is an open-source GitHub project complementary to the jornal paper, 
 which has been submitted to Applied Soft Computing (under review).
 
